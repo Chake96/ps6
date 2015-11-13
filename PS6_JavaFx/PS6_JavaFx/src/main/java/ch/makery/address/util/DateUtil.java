@@ -1,11 +1,8 @@
 package ch.makery.address.util;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Date;
 
 /**
  * Helper functions for handling dates.
@@ -35,12 +32,6 @@ public class DateUtil {
         return DATE_FORMATTER.format(date);
     }
 
-    public static Date getUnformattedDate(LocalDate date)
-    {     			
-    	Instant instant = date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
-    	Date bday = Date.from(instant);
-        return bday;
-    }
     /**
      * Converts a String in the format of the defined {@link DateUtil#DATE_PATTERN} 
      * to a {@link LocalDate} object.
